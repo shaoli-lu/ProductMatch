@@ -1,6 +1,9 @@
-.tbl {
-	font-weight: 500;
-	font-size: 35px;
+.mgn {
 	padding: 5px;
 	margin: 5px;
+}
+
+.hdr {
+	font-weight: 900;
+	font-size: 15px;
 }
