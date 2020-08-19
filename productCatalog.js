@@ -73,6 +73,7 @@ function getIntersection(arrA,arrB,searchedId){
 
 }
 
+
 function processSearch(searchId){
     api.searchProductById(searchId).then(function(val){
         return Promise.all([api.searchProductsByPrice(val.price,50),api.searchProductsByType(val.type),val]);
@@ -85,8 +86,33 @@ function processSearch(searchId){
     });
 }
 
+function processProdTypeSearch(type){
+    api.searchProductsByType(type).then(function(val){
+        return val;
+    }).then(function(val){
+       updateTable('similarTable',val);
+    }).catch(function(val){
+        alert(val);
+    });
+}
+
+function processPriceSearch(priceInp){
+    api.searchProductsByPrice(priceInp,50).then(function(val){
+       updateTable('similarTable',val);
+    }).catch(function(val){
+        alert(val);
+    });
+}
+
 document.getElementById("inputButton").addEventListener('click',function(){
     processSearch(document.getElementById('input').value);
     
 });
 
+document.getElementById("inputBtnProdType").addEventListener('click', function(){
+    processProdTypeSearch(document.getElementById('inputProdType').value);
+});
+
+document.getElementById("inputBtnProdPrice").addEventListener('click', function(){
+    processPriceSearch(document.getElementById('inputProdPrice').value);
+});

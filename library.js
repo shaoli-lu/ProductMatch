@@ -82,17 +82,17 @@
             return promise;
         }
 
-        function searchProductsByPrice(price,difference){
+        function searchProductsByPrice(priceInp,difference){
             var promise = new Promise(function(resolve,reject){
                 var i = 0;
                 var priceArray = [];
-                if(!isFinite(price)){
-                    reject("Invalid Price: " + price)
+                if(!isFinite(priceInp)){
+                    reject("Invalid Price: " + priceInp)
                 }
                 else{
                     setTimeout(function(){
                         while (i < catalog.length){
-                            if (Math.abs(catalog[i].price - price) < difference){
+                            if (Math.abs(catalog[i].price - priceInp) < difference){
                                 priceArray.push({id:catalog[i].id,price:catalog[i].price,type:catalog[i].type});
                             }
                             i++;

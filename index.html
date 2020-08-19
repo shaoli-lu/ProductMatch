@@ -12,12 +12,35 @@
 		<link rel="shortcut icon" type="image/png" href="favicon.png">
     </head>
     <body>
+        
+        <div class="visible-xs">
+            <img src="binary-and-linear-search.gif" width="35%" class="hdr" alt="Product Search" title="Product Search" />
+            </div>
+            <div class="hidden-xs">
+            <img src="binary-and-linear-search.gif" width="15%" class="hdr" alt="Product Search" title="Product Search" />
+        </div>
+
         <div class ="container-fluid mgn">
+            
             <div class="hdr">
                 <p>Search Product by Id</p>
                 <input id="input">
-                <button id="inputButton" >Search Product</button>
+                <button id="inputButton" >Search by ID</button>
             </div>
+
+            <div class="hdr">
+                <p>Search Product by Type</p>
+                <input id="inputProdType">
+                <button id="inputBtnProdType">Search by Type</button>
+            </div>
+
+            <div class="hdr">
+                <p>Search Product by Price</p>
+                <input type="number" id="inputProdPrice">
+                <button id="inputBtnProdPrice">Search by Price</button>
+
+            </div>
+
             <div >
                 <h3>Examined Product</h3>
                 <p id="productText">Product Id: <br>Price: <br>Type: </p>
